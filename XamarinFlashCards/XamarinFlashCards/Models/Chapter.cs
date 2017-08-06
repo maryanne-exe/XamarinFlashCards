@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace XamarinFlashCards
 {
@@ -26,5 +27,11 @@ namespace XamarinFlashCards
 			get { return description; }
 			set { SetProperty(ref description, value); }
 		}
+
+        IEnumerable<Question> questions = new List<Question>();
+        public IEnumerable<Question> Questions {
+			get { return questions; }
+			set { SetProperty(ref questions, value); }
+        }
     }
 }
