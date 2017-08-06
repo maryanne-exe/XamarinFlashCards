@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-
-namespace XamarinFlashCards
+﻿namespace XamarinFlashCards
 {
     public class ItemDetailViewModel : BaseViewModel
     {
-        public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public Chapter Chapter { get; set; }
+        public ItemDetailViewModel (Chapter chapter = null)
         {
-            Title = item.Text;
-            Item = item;
+            Title = chapter.Title;
+            Chapter = chapter;
         }
 
         int quantity = 1;
