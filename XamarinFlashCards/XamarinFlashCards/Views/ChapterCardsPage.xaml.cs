@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XamarinFlashCards
 {
-    public partial class ChapterCardsPage : ContentPage
+    public partial class ChapterCardsPage : CarouselPage
     {
         public ChapterCardsPage(ChapterCardsViewModel model)
         {
-            InitializeComponent();
-
+            InitializeComponent ();
             BindingContext = model;
+
+            ItemsSource = model.Chapter.Questions;
         }
     }
 }
