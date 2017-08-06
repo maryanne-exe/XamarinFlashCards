@@ -16,13 +16,6 @@ namespace XamarinFlashCards
             Title = "Chapters";
             Chapters = new ObservableRangeCollection<Chapter>();
             LoadChaptersCommand = new Command(async () => await ExecuteLoadChaptersCommand());
-
-            MessagingCenter.Subscribe<NewChapterPage, Chapter>(this, "AddChapter", async (obj, item) =>
-            {
-                var _item = item as Chapter;
-                Chapters.Add(_item);
-                await DataStore.AddItemAsync(_item);
-            });
         }
 
         async Task ExecuteLoadChaptersCommand()
