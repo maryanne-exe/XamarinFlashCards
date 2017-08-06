@@ -6,7 +6,7 @@ namespace XamarinFlashCards
 {
     public partial class App : Application
     {
-        public static bool UseMockDataStore = true;
+        public static bool UseLocalDataStore = true;
         public static string BackendUrl = "https://localhost:5000";
 
         public static IDictionary<string, string> LoginParameters => null;
@@ -15,8 +15,8 @@ namespace XamarinFlashCards
         {
             InitializeComponent();
 
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
+            if (UseLocalDataStore)
+                DependencyService.Register<LocalDataStore>();
             else
                 DependencyService.Register<CloudDataStore>();
 
@@ -25,7 +25,7 @@ namespace XamarinFlashCards
 
         public static void SetMainPage()
         {
-            if (!UseMockDataStore && !Settings.IsLoggedIn)
+            if (!UseLocalDataStore && !Settings.IsLoggedIn)
             {
                 Current.MainPage = new NavigationPage(new LoginPage())
                 {
