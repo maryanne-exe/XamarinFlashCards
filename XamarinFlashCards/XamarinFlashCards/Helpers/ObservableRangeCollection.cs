@@ -17,7 +17,6 @@ namespace XamarinFlashCards
         /// Initializes a new instance of the System.Collections.ObjectModel.ObservableCollection(Of T) class. 
         /// </summary> 
         public ObservableRangeCollection()
-            : base()
         {
         }
 
@@ -37,7 +36,7 @@ namespace XamarinFlashCards
         public void AddRange(IEnumerable<T> collection, NotifyCollectionChangedAction notificationMode = NotifyCollectionChangedAction.Add)
         {
             if (collection == null)
-                throw new ArgumentNullException("collection");
+                throw new ArgumentNullException(nameof(collection));
 
             CheckReentrancy();
 
@@ -73,7 +72,7 @@ namespace XamarinFlashCards
         public void RemoveRange(IEnumerable<T> collection)
         {
             if (collection == null)
-                throw new ArgumentNullException("collection");
+                throw new ArgumentNullException(nameof(collection));
 
             foreach (var i in collection)
                 Items.Remove(i);
@@ -94,7 +93,7 @@ namespace XamarinFlashCards
         public void ReplaceRange(IEnumerable<T> collection)
         {
             if (collection == null)
-                throw new ArgumentNullException("collection");
+                throw new ArgumentNullException(nameof(collection));
 
             Items.Clear();
             AddRange(collection, NotifyCollectionChangedAction.Reset);
