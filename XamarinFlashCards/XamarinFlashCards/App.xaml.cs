@@ -17,8 +17,6 @@ namespace XamarinFlashCards
 
             if (UseLocalDataStore)
                 DependencyService.Register<LocalDataStore>();
-            else
-                DependencyService.Register<CloudDataStore>();
 
             SetMainPage();
         }
