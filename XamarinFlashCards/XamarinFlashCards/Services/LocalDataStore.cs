@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,7 +6,7 @@ namespace XamarinFlashCards
 {
     public class LocalDataStore : IDataStore<Chapter>
     {
-        IEnumerable<Chapter> chapters;
+        readonly IEnumerable<Chapter> chapters;
 
         public LocalDataStore()
         {
@@ -33,7 +32,7 @@ namespace XamarinFlashCards
                 return Task.FromResult(false);
             }
 
-            if(chapters.Where(chapter => chapter.Id == item.Id).Any()) {
+            if(chapters.Any(c => c.Id == item.Id)) {
                 return Task.FromResult(false);
             }
 
@@ -44,12 +43,29 @@ namespace XamarinFlashCards
 
         public Task<bool> DeleteItemAsync(string id)
         {
-            throw new NotImplementedException();
+            if(string.IsNullOrEmpty(id)) {
+                return Task.FromResult(false);
+            }
+
+            var chapter = chapters.FirstOrDefault(c => c.Id == id);
+
+            if(chapter == null) {
+                return Task.FromResult(false);
+            }
+
+            (chapters as List<Chapter>).Remove(chapter);
+            return Task.FromResult(true);
         }
 
         public Task<Chapter> GetItemAsync(string id)
         {
-            throw new NotImplementedException();
+			if (string.IsNullOrEmpty(id)) {
+                return Task.FromResult(null as Chapter);
+			}
+
+            var chapter = chapters.FirstOrDefault(c => c.Id == id);
+
+            return Task.FromResult(chapter);
         }
 
         public Task<IEnumerable<Chapter>> GetItemsAsync(bool forceRefresh = false)
@@ -59,7 +75,19 @@ namespace XamarinFlashCards
 
         public Task<bool> UpdateItemAsync(Chapter item)
         {
-            throw new NotImplementedException();
+			if (item == null) {
+				return Task.FromResult(false);
+			}
+
+            var chapter = chapters.FirstOrDefault(c => c.Id == item.Id);
+            if (chapter != null) {
+                (chapters as List<Chapter>).Remove(chapter);
+                (chapters as List<Chapter>).Add(item);
+
+                return Task.FromResult(true);
+            }
+
+            return Task.FromResult(false);
         }
     }
 }
