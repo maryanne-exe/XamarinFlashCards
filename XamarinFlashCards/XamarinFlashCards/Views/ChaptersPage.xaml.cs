@@ -27,11 +27,6 @@ namespace XamarinFlashCards
             ChaptersListView.SelectedItem = null;
         }
 
-        async void AddChapter_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new NewChapterPage());
-        }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();
