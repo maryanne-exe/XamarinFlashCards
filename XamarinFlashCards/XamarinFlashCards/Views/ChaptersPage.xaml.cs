@@ -4,11 +4,11 @@ using Xamarin.Forms;
 
 namespace XamarinFlashCards
 {
-    public partial class ItemsPage : ContentPage
+    public partial class ChaptersPage : ContentPage
     {
         ChaptersViewModel viewModel;
 
-        public ItemsPage()
+        public ChaptersPage()
         {
             InitializeComponent();
 

@@ -42,7 +42,7 @@ namespace XamarinFlashCards
             Current.MainPage = new TabbedPage
             {
                 Children = {
-                    new NavigationPage(new ItemsPage())
+                    new NavigationPage(new ChaptersPage())
                     {
                         Title = "Browse",
                         Icon = Device.OnPlatform("tab_feed.png", null, null)
