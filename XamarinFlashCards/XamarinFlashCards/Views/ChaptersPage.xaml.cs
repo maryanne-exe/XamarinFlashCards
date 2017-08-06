@@ -17,11 +17,11 @@ namespace XamarinFlashCards
 
         async void OnChapterSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Chapter;
-            if (item == null)
+            var chapter = args.SelectedItem as Chapter;
+            if (chapter == null)
                 return;
 
-            await Navigation.PushAsync(new ChapterDetailPage(new ChapterDetailViewModel(item)));
+            await Navigation.PushAsync(new ChapterCardsPage(new ChapterCardsViewModel(chapter)));
 
             // Manually deselect item
             ChaptersListView.SelectedItem = null;

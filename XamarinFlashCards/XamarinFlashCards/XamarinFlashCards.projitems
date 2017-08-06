@@ -15,11 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessagingCenterAlert.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChapterDetailViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChaptersViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\ChapterDetailPage.xaml.cs">
-      <DependentUpon>ChapterDetailPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ChaptersPage.xaml.cs">
       <DependentUpon>ChaptersPage.xaml</DependentUpon>
     </Compile>
@@ -31,11 +27,17 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\LocalDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Chapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChapterCardsPage.xaml.cs">
+      <DependentUpon>ChapterCardsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChapterCardsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ChapterDetailPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ChaptersPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ChapterCardsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

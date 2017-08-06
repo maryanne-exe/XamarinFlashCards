@@ -18,31 +18,12 @@ namespace XamarinFlashCards
             if (UseLocalDataStore)
                 DependencyService.Register<LocalDataStore>();
 
-            SetMainPage();
-        }
-
-        public static void SetMainPage()
-        {
-            if (!UseLocalDataStore && !Settings.IsLoggedIn)
-            {
-                //Current.MainPage = new NavigationPage(new LoginPage())
-                //{
-                //    BarBackgroundColor = (Color)Current.Resources["Primary"],
-                //    BarTextColor = Color.White
-                //};
-            }
-            else
-            {
-                GoToMainPage();
-            }
+            GoToMainPage();
         }
 
         public static void GoToMainPage()
         {
-            Current.MainPage = new NavigationPage(new ChaptersPage()) {
-                Title = "Browse",
-                //Icon = Device.OnPlatform("tab_feed.png", null, null)
-            };
+            Current.MainPage = new NavigationPage(new ChaptersPage());
         }
     }
 }
