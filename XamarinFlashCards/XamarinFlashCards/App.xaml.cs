@@ -25,11 +25,11 @@ namespace XamarinFlashCards
         {
             if (!UseLocalDataStore && !Settings.IsLoggedIn)
             {
-                Current.MainPage = new NavigationPage(new LoginPage())
-                {
-                    BarBackgroundColor = (Color)Current.Resources["Primary"],
-                    BarTextColor = Color.White
-                };
+                //Current.MainPage = new NavigationPage(new LoginPage())
+                //{
+                //    BarBackgroundColor = (Color)Current.Resources["Primary"],
+                //    BarTextColor = Color.White
+                //};
             }
             else
             {
@@ -39,20 +39,9 @@ namespace XamarinFlashCards
 
         public static void GoToMainPage()
         {
-            Current.MainPage = new TabbedPage
-            {
-                Children = {
-                    new NavigationPage(new ChaptersPage())
-                    {
-                        Title = "Browse",
-                        Icon = Device.OnPlatform("tab_feed.png", null, null)
-                    },
-                    new NavigationPage(new AboutPage())
-                    {
-                        Title = "About",
-                        Icon = Device.OnPlatform("tab_about.png", null, null)
-                    },
-                }
+            Current.MainPage = new NavigationPage(new ChaptersPage()) {
+                Title = "Browse",
+                //Icon = Device.OnPlatform("tab_feed.png", null, null)
             };
         }
     }

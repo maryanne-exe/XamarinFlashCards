@@ -14,22 +14,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessagingCenterAlert.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChapterDetailViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChaptersViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml.cs">
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ChapterDetailPage.xaml.cs">
       <DependentUpon>ChapterDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\ChaptersPage.xaml.cs">
       <DependentUpon>ChaptersPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NewChapterPage.xaml.cs">
       <DependentUpon>NewItemPage.xaml</DependentUpon>
@@ -41,10 +33,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Chapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ChapterDetailPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ChaptersPage.xaml" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
   </ItemGroup>
