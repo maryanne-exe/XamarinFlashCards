@@ -7,7 +7,7 @@ namespace XamarinFlashCards
         /// <summary>
         /// Get the azure service instance
         /// </summary>
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Chapter> DataStore => DependencyService.Get<IDataStore<Chapter>>();
 
         bool isBusy = false;
         public bool IsBusy
