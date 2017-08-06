@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -14,13 +15,31 @@ namespace XamarinFlashCards
                 new Chapter {
                     Title = "Xamarin",
                     Description = "Learn Xamarin with cards!"
+                },
+                new Chapter {
+                    Title = "Azure",
+                    Description = "Learn Azure with cards!"
+                },
+                new Chapter {
+                    Title = "C#",
+                    Description = "Learn C# with cards!"
                 }
             };
         }
 
         public Task<bool> AddItemAsync(Chapter item)
         {
-            throw new NotImplementedException();
+            if(item == null) {
+                return Task.FromResult(false);
+            }
+
+            if(chapters.Where(chapter => chapter.Id == item.Id).Any()) {
+                return Task.FromResult(false);
+            }
+
+            (chapters as List<Chapter>).Add(item);
+
+            return Task.FromResult(true);
         }
 
         public Task<bool> DeleteItemAsync(string id)
