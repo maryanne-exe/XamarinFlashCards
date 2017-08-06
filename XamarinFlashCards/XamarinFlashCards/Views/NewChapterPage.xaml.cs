@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 namespace XamarinFlashCards
 {
-    public partial class NewItemPage : ContentPage
+    public partial class NewChapterPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Chapter Item { get; set; }
 
-        public NewItemPage()
+        public NewChapterPage()
         {
             InitializeComponent();
 
-            Item = new Item
-            {
-                Text = "Item name",
+            Item = new Chapter {
+                Title = "Chapter name",
                 Description = "This is a nice description"
             };
 
@@ -24,7 +22,7 @@ namespace XamarinFlashCards
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddChapter", Item);
             await Navigation.PopToRootAsync();
         }
     }
