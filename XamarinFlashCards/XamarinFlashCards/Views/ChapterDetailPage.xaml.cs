@@ -2,11 +2,11 @@
 
 namespace XamarinFlashCards
 {
-    public partial class ItemDetailPage : ContentPage
+    public partial class ChapterDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        ChapterDetailViewModel viewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public ChapterDetailPage(ChapterDetailViewModel viewModel)
         {
             InitializeComponent();
 

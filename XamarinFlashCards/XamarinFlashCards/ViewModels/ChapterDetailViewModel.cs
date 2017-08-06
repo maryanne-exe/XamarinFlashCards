@@ -1,9 +1,9 @@
 ﻿namespace XamarinFlashCards
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class ChapterDetailViewModel : BaseViewModel
     {
         public Chapter Chapter { get; set; }
-        public ItemDetailViewModel (Chapter chapter = null)
+        public ChapterDetailViewModel (Chapter chapter = null)
         {
             Title = chapter.Title;
             Chapter = chapter;
