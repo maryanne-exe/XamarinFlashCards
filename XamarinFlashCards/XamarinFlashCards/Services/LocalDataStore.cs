@@ -27,7 +27,20 @@ namespace XamarinFlashCards
                                     IsCorrect = false
 								}
                             }
-                        }
+                        },
+						new Question {
+							QuestionText = "How was your day?",
+							Answers = new [] {
+								new Answer{
+									AnswerText = "Good!",
+									IsCorrect = true
+								},
+								new Answer{
+                                    AnswerText = "Bad ;(",
+									IsCorrect = false
+								}
+							}
+						}
                     }
                 },
                 new Chapter {
