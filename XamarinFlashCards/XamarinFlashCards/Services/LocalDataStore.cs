@@ -13,7 +13,22 @@ namespace XamarinFlashCards
             chapters = new List<Chapter> {
                 new Chapter {
                     Title = "Xamarin",
-                    Description = "Learn Xamarin with cards!"
+                    Description = "Learn Xamarin with cards!",
+                    Questions = new List<Question> {
+                        new Question {
+                            QuestionText = "How are you?",
+                            Answers = new [] {
+                                new Answer{
+                                    AnswerText = "OK",
+                                    IsCorrect = true
+                                },
+								new Answer{
+									AnswerText = "Mas or menos",
+                                    IsCorrect = false
+								}
+                            }
+                        }
+                    }
                 },
                 new Chapter {
                     Title = "Azure",

@@ -1,13 +1,12 @@
-﻿using System;
-
-using Xamarin.Forms;
-
-namespace XamarinFlashCards
+﻿namespace XamarinFlashCards
 {
     public class ChapterCardsViewModel : BaseViewModel
     {
-        public ChapterCardsViewModel(Chapter chapter)
+        public Chapter Chapter { get; set; }
+
+        public ChapterCardsViewModel (Chapter chapter)
         {
+            Chapter = chapter;
             Title = "Cards";
         }
     }
