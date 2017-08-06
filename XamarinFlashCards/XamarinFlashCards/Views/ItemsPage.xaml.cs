@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -17,7 +15,7 @@ namespace XamarinFlashCards
             BindingContext = viewModel = new ChaptersViewModel();
         }
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void OnChapterSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Chapter;
             if (item == null)
@@ -26,10 +24,10 @@ namespace XamarinFlashCards
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
             // Manually deselect item
-            ItemsListView.SelectedItem = null;
+            ChaptersListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddChapter_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new NewChapterPage());
         }
