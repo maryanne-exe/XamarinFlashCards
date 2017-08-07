@@ -1,4 +1,6 @@
 # XamarinFlashCards
+[![Build status](https://build.mobile.azure.com/v0.1/apps/efd2fca4-4521-4b74-9bb2-b642ffb25962/branches/master/badge)](https://mobile.azure.com)
+<br>
 Hey there,
 
 Here is a little app I created for the interview at Xamarin team. I wanted to learn more about Xamarin, Azure, and C# so built Xamarin Flash Cards for iOS that provides with a variety of technical questions. The app contains the list of topics and flashcards with questions on each of them. Feel free to extend Xamarin Flash Cards or use not only for Xamarin!
