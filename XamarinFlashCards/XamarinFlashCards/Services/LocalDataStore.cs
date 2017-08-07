@@ -1,6 +1,9 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace XamarinFlashCards
 {
@@ -10,48 +13,13 @@ namespace XamarinFlashCards
 
         public LocalDataStore()
         {
-            chapters = new List<Chapter> {
-                new Chapter {
-                    Title = "Xamarin",
-                    Description = "Learn Xamarin with cards!",
-                    Questions = new List<Question> {
-                        new Question {
-                            QuestionText = "How are you?",
-                            Answers = new [] {
-                                new Answer{
-                                    AnswerText = "OK",
-                                    IsCorrect = true
-                                },
-								new Answer{
-									AnswerText = "Mas or menos",
-                                    IsCorrect = false
-								}
-                            }
-                        },
-						new Question {
-							QuestionText = "How was your day?",
-							Answers = new [] {
-								new Answer{
-									AnswerText = "Good!",
-									IsCorrect = true
-								},
-								new Answer{
-                                    AnswerText = "Bad ;(",
-									IsCorrect = false
-								}
-							}
-						}
-                    }
-                },
-                new Chapter {
-                    Title = "Azure",
-                    Description = "Learn Azure with cards!"
-                },
-                new Chapter {
-                    Title = "C#",
-                    Description = "Learn C# with cards!"
-                }
-            };
+            Stream stream = new FileStream("Chapters.json", FileMode.Open);
+
+			using (var reader = new StreamReader(stream))
+			{
+				var json = reader.ReadToEnd();
+                chapters = JsonConvert.DeserializeObject<IEnumerable<Chapter>>(json);
+			}
         }
 
         public Task<bool> AddItemAsync(Chapter item)

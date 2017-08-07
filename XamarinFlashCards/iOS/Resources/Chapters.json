@@ -1,0 +1,50 @@
+﻿[
+  {
+    "Title": "Xamarin",
+    "Description": "Learn Xamarin with cards!",
+    "Questions": [
+      {
+        "QuestionText": "How are you?",
+        "Answers": [
+          {
+            "AnswerText": "OK",
+            "IsCorrect": true
+          },
+          {
+            "AnswerText": "Mas or menos",
+            "IsCorrect": false
+          }
+        ],
+        "Description": "You should be OK, other answers are wrong!"
+      },
+      {
+        "QuestionText": "How was your day?",
+        "Answers": [
+          {
+            "AnswerText": "Good!",
+            "IsCorrect": true
+          },
+          {
+            "AnswerText": "Bad ;(",
+            "IsCorrect": false
+          }
+        ],
+        "Description": ""
+      }
+    ]
+  },
+  {
+    "Title": "Azure",
+    "Description": "Learn Azure with cards!",
+    "Questions": [
+
+    ]
+  },
+  {
+    "Title": "C#",
+    "Description": "Learn C# with cards!",
+    "Questions": [
+
+    ]
+  }
+]
