@@ -59,7 +59,17 @@ namespace XamarinFlashCards
 
 		void DisplayAnswerResult(bool correct)
 		{
-            CurrentResultLabel.Text = correct ? "Correct" : "Wrong";
+            if (correct == true) {
+                CurrentResultLabel.Text = "Correct!";
+                CurrentResultLabel.TextColor = Color.FromHex("#fff");
+                CurrentResultLabel.BackgroundColor = Color.FromHex("91C46C");             
+            }
+            else {
+                CurrentResultLabel.Text = "Wrong :(";
+				CurrentResultLabel.TextColor = Color.FromHex("#fff");
+				CurrentResultLabel.BackgroundColor = Color.FromHex("EA6045");
+			}
+
             CurrentQuestionView.IsVisible = false;
             CurrentResultView.IsVisible = true;
 		}

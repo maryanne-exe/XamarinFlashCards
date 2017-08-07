@@ -4,18 +4,18 @@
         <DataTemplate>
             <ContentPage>
                 <ContentPage.Padding>
-                    <OnPlatform x:TypeArguments="Thickness" iOS="0,40,0,0" Android="0,40,0,0" />
+                    <OnPlatform x:TypeArguments="Thickness" iOS="10,50,10,0" Android="10,50,10,0" />
                 </ContentPage.Padding>
                 <StackLayout>
                     <StackLayout x:Name="questionView">
-                        <Label Text="{Binding QuestionText}" FontSize="Medium" HorizontalOptions="Center" />
-                        <ListView x:Name="answersListView" ItemsSource="{Binding Answers}" ItemSelected="OnAnswerSelected">
+                        <Label Text="{Binding QuestionText}" FontSize="Large" HorizontalOptions="Center" />
+                        <ListView x:Name="answersListView" ItemsSource="{Binding Answers}" ItemSelected="OnAnswerSelected" HasUnevenRows="true">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                                            <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
-                                                <Label Text="{Binding AnswerText}" VerticalTextAlignment="Center" Font="Medium" />
+                                            <StackLayout Padding="10,10,10,10" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                                <Label Text="{Binding AnswerText}" VerticalTextAlignment="Center" Font="Small" />
                                             </StackLayout>
                                         </StackLayout>
                                     </ViewCell>
@@ -26,9 +26,9 @@
                             </ListView.Footer>
                         </ListView>
                     </StackLayout>
-                    <StackLayout x:Name="resultView" IsVisible="false">
-                        <Label x:Name="resultLabel" />
-                        <Label Text="{Binding Description}" />
+                    <StackLayout x:Name="resultView" IsVisible="false" Margin="10,50,10,00" Spacing="10">
+                        <Label x:Name="resultLabel" XAlign="Center" YAlign="Center" HeightRequest="50" Font="Large" />
+                        <Label Text="{Binding Description}" Font="Small" />
                         <Button Text="Next" Clicked="OnNextButtonClicked" />
                     </StackLayout>
                 </StackLayout>
