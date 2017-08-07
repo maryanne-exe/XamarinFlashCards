@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Xamarin.Forms;
 
 namespace XamarinFlashCards
@@ -11,6 +12,12 @@ namespace XamarinFlashCards
 
     public partial class ChapterCardsPage : CarouselPage
     {
+        // Properties
+        Label CurrentResultLabel => CurrentPage.FindByName<Label>("resultLabel");
+        StackLayout CurrentQuestionView => CurrentPage.FindByName<StackLayout>("questionView");
+		StackLayout CurrentResultView => CurrentPage.FindByName<StackLayout>("resultView");
+        ListView CurrentAnswersListView => CurrentPage.FindByName<ListView>("answersListView");
+
         public ChapterCardsPage(ChapterCardsViewModel model)
         {
             InitializeComponent ();
@@ -25,10 +32,8 @@ namespace XamarinFlashCards
 			
             if (answer == null)
 				return;
-
-            Console.WriteLine(answer.IsCorrect ? "Correct!" : "Incorrrect!");
-
-            ScrollCarouselPage(PageScrollDirection.Right);
+            
+            DisplayAnswerResult(answer.IsCorrect);
 		}
 
         void ScrollCarouselPage(PageScrollDirection direction)

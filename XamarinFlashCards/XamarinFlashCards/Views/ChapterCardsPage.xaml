@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" 
-              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-              x:Class="XamarinFlashCards.ChapterCardsPage">
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinFlashCards.ChapterCardsPage">
     <CarouselPage.ItemTemplate>
         <DataTemplate>
             <ContentPage>
@@ -9,20 +7,30 @@
                     <OnPlatform x:TypeArguments="Thickness" iOS="0,40,0,0" Android="0,40,0,0" />
                 </ContentPage.Padding>
                 <StackLayout>
-                    <Label Text="{Binding QuestionText}" FontSize="Medium" HorizontalOptions="Center" />
-                    <ListView x:Name="answersListView" ItemsSource="{Binding Answers}" ItemSelected="OnAnswerSelected">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                                        <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
-                                            <Label Text="{Binding AnswerText}" VerticalTextAlignment="Center" Font="Medium" />
+                    <StackLayout x:Name="questionView">
+                        <Label Text="{Binding QuestionText}" FontSize="Medium" HorizontalOptions="Center" />
+                        <ListView x:Name="answersListView" ItemsSource="{Binding Answers}" ItemSelected="OnAnswerSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                            <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                                <Label Text="{Binding AnswerText}" VerticalTextAlignment="Center" Font="Medium" />
+                                            </StackLayout>
                                         </StackLayout>
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <ListView.Footer>
+                                <Label />
+                            </ListView.Footer>
+                        </ListView>
+                    </StackLayout>
+                    <StackLayout x:Name="resultView" IsVisible="false">
+                        <Label x:Name="resultLabel" />
+                        <Label Text="{Binding Description}" />
+                        <Button Text="Next" Clicked="OnNextButtonClicked" />
+                    </StackLayout>
                 </StackLayout>
             </ContentPage>
         </DataTemplate>
