@@ -1,5 +1,6 @@
 # XamarinFlashCards
 [![Build status](https://build.mobile.azure.com/v0.1/apps/efd2fca4-4521-4b74-9bb2-b642ffb25962/branches/master/badge)](https://mobile.azure.com)
+<img src="https://build.mobile.azure.com/v0.1/apps/efd2fca4-4521-4b74-9bb2-b642ffb25962/branches/master/badge"/>
 <br><br>
 Hey there,
 
