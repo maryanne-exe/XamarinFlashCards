@@ -9,8 +9,7 @@ Built with Xamarin.Forms :monkey_face:
 <br><br>
 <table>
    <tr>
-     <td><img src="Art/XamarinCards.gif"/></td>
-     <td><img src="Art/CSharpCards.gif"/></td>
+     <td><img src="Art/XamCards.gif"/></td>
    </tr>
 </table>
 
