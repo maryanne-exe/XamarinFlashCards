@@ -18,6 +18,7 @@ namespace XamarinFlashCards
 			using (var reader = new StreamReader(stream))
 			{
 				var json = reader.ReadToEnd();
+
                 chapters = JsonConvert.DeserializeObject<IEnumerable<Chapter>>(json);
 			}
         }
