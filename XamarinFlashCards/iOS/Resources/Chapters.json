@@ -4,47 +4,163 @@
     "Description": "Learn Xamarin with cards!",
     "Questions": [
       {
-        "QuestionText": "How are you?",
+        "QuestionText": "What is Xamarin?",
         "Answers": [
           {
-            "AnswerText": "OK",
+            "AnswerText": "It is an open source integrated development environment for Linux, OS X, and Windows. Its primary focus is development of projects that use Mono and .NET frameworks.",
+            "IsCorrect": false
+          },
+          {
+            "AnswerText": "It is a company founded by the engineers who created Mono. It provides professional developer tools that make cross platform code easier to author, test, and maintain.",
             "IsCorrect": true
           },
           {
-            "AnswerText": "Mas or menos",
+            "AnswerText": "It is a framework and an open source implementation of Microsoft’s .NET Framework based on the open standards of European Computer Manufacturer's Association for the C# language and the Common Language Runtime.",
             "IsCorrect": false
           }
         ],
-        "Description": "You should be OK, other answers are wrong!"
+        "Description": "Xamarin is a Microsoft-owned San Francisco, California based software company founded in May 2011 by the engineers that created Mono, Mono for Android and MonoTouch."
       },
       {
-        "QuestionText": "How was your day?",
+        "QuestionText": "What is correct about Xamarin history?",
         "Answers": [
           {
-            "AnswerText": "Good!",
-            "IsCorrect": true
+            "AnswerText": "On August 30, 2015: Microsoft acquired Xamarin.",
+            "IsCorrect": false
           },
           {
-            "AnswerText": "Bad ;(",
+            "AnswerText": "Xamarin 4.0 was released in February 2012 Xamarin.Android and Xamarin.iOS that make it possible to do native Android, iOS and Windows development in C#, with either Visual Studio or Xamarin Studio.",
             "IsCorrect": false
+          },
+          {
+            "AnswerText": "Xamarin.Forms introduced in Xamarin 3 on May 28, 2014 and allows one to use portable controls subsets that are mapped to native controls of Android, iOS and Windows Phone.",
+            "IsCorrect": true
           }
         ],
-        "Description": ""
+        "Description": "Xamarin.Forms API allows quickly build native apps for iOS, Android and Windows completely in C# with over 96% code sharing across platforms."
       }
     ]
   },
   {
     "Title": "Azure",
     "Description": "Learn Azure with cards!",
-    "Questions": [
-
-    ]
+    "Questions":[
+         {
+            "QuestionText":"Windows Azure platform consists of which three main components?",
+            "Answers":[
+               {
+                  "AnswerText":"Fabric, storage and APIs/SDKs.",
+                  "IsCorrect":true
+               },
+               {
+                  "AnswerText":"Storage, security and APIs.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"Allen, Gates and Ballmer.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"Active Directory, virtual machines and Windows OS.",
+                  "IsCorrect":false
+               }
+            ],
+            "Description":"According to Windows expert Johnathan Hassell, Windows Azure consists of three main components: the fabric, a network of all the Microsoft machines running the Azure platform; the storage - tables, queries, queues and binary large objects (BLOBs) as well as Windows Azure Drives; and APIs and SDK, or the development layer."
+         },
+         {
+            "QuestionText":"What other Microsoft product is expected to provide the underpinnings of the Windows Azure platform as well as democratize high-availability clusters to push the scale-up envelope?",
+            "Answers":[
+               {
+                  "AnswerText":"Exchange Server.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"SQL Server.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"Windows Server 8.",
+                  "IsCorrect":true
+               },
+               {
+                  "AnswerText":"Windows NT.",
+                  "IsCorrect":false
+               }
+            ],
+            "Description":"In late 2011, Microsoft revealed the link between Azure and Windows Server 8, claiming the dynamic duo will balance cloud computing and virtualized high-availability infrastructures, offer improved storage capabilities and provide access to an Azure toolkit for developing and deploying an Azure public cloud service to end users."
+         }
+      ]
   },
   {
     "Title": "C#",
     "Description": "Learn C# with cards!",
-    "Questions": [
-
-    ]
+    "Questions":[
+         {
+            "QuestionText":"Which of the following converts a type to an unsigned int type in C#?",
+            "Answers":[
+               {
+                  "AnswerText":"ToType.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"ToUInt16.",
+                  "IsCorrect":true
+               },
+               {
+                  "AnswerText":"ToSingle.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"ToString.",
+                  "IsCorrect":false
+               }
+            ],
+            "Description":"ToUInt16() method converts a type to an unsigned int type."
+         },
+         {
+            "QuestionText":"Which of the following is correct about variable naming conventions in C#?",
+            "Answers":[
+               {
+                  "AnswerText":"A name must begin with a letter that could be followed by a sequence of letters, digits (0 - 9) or underscore.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"The first character in an identifier cannot be a digit.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"Both of the above.",
+                  "IsCorrect":true
+               },
+               {
+                  "AnswerText":"None of the above.",
+                  "IsCorrect":false
+               }
+            ],
+            "Description":"Both of the above options are correct."
+         },
+         {
+            "QuestionText":"Which of the following access specifier in C# allows a class to expose its member variables and member functions to other functions and objects in the current assembly?",
+            "Answers":[
+               {
+                  "AnswerText":"Public.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"Private.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"Protected.",
+                  "IsCorrect":false
+               },
+               {
+                  "AnswerText":"Internal.",
+                  "IsCorrect":true
+               }
+            ],
+            "Description":"Internal access specifier allows a class to expose its member variables and member functions to other functions and objects in the current assembly."
+         }
+      ]
   }
 ]
