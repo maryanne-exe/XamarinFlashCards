@@ -17,5 +17,12 @@ namespace XamarinFlashCards
 			get { return answers; }
 			set { SetProperty(ref answers, value); }
 		}
+
+        string description = string.Empty;
+		public string Description
+		{
+			get { return description; }
+			set { SetProperty(ref description, value); }
+		}
 	}
 }

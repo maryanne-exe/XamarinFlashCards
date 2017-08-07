@@ -44,14 +44,28 @@ namespace XamarinFlashCards
             else
                 index--;
 
-            if (index >= pageCount)
-                index = pageCount - 1;
-            else if (index < 0)
+            if (index >= pageCount || index < 0)
                 index = 0;
 
             Device.BeginInvokeOnMainThread(() => {
                 CurrentPage = Children[index];
             });
 		}
+
+		void DisplayAnswerResult(bool correct)
+		{
+            CurrentResultLabel.Text = correct ? "Correct" : "Wrong";
+            CurrentQuestionView.IsVisible = false;
+            CurrentResultView.IsVisible = true;
+		}
+
+        void OnNextButtonClicked(object sender, EventArgs args)
+        {
+			CurrentQuestionView.IsVisible = true;
+            CurrentResultView.IsVisible = false;
+            CurrentAnswersListView.SelectedItem = null;
+
+            ScrollCarouselPage(PageScrollDirection.Right);
+        }
     }
 }
