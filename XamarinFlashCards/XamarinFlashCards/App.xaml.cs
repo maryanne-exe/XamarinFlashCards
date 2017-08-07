@@ -8,7 +8,6 @@ namespace XamarinFlashCards
     {
         public static bool UseLocalDataStore = true;
         public static string BackendUrl = "https://localhost:5000";
-
         public static IDictionary<string, string> LoginParameters => null;
 
         public App()

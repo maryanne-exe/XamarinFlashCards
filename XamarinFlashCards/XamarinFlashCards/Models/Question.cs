@@ -9,20 +9,17 @@ namespace XamarinFlashCards
 
         IEnumerable<Answer> answers = new List<Answer>();
 
-        public string QuestionText
-		{
+        public string QuestionText {
 			get { return questionText; }
 			set { SetProperty(ref questionText, value); }
 		}
 
-        public IEnumerable<Answer> Answers
-		{
+        public IEnumerable<Answer> Answers {
 			get { return answers; }
 			set { SetProperty(ref answers, value); }
 		}
 
-		public string Description
-		{
+		public string Description {
 			get { return description; }
 			set { SetProperty(ref description, value); }
 		}

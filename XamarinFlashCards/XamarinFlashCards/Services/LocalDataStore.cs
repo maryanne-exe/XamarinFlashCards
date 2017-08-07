@@ -24,13 +24,11 @@ namespace XamarinFlashCards
 
         public Task<bool> AddItemAsync(Chapter item)
         {
-            if(item == null) {
+            if(item == null)
                 return Task.FromResult(false);
-            }
 
-            if(chapters.Any(c => c.Id == item.Id)) {
+            if(chapters.Any(c => c.Id == item.Id))
                 return Task.FromResult(false);
-            }
 
             (chapters as List<Chapter>).Add(item);
 
@@ -41,13 +39,11 @@ namespace XamarinFlashCards
         {
             var chapter = chapters.FirstOrDefault(c => c.Id == id);
 
-            if(string.IsNullOrEmpty(id)) {
+            if(string.IsNullOrEmpty(id))
                 return Task.FromResult(false);
-            }
 
-            if(chapter == null) {
+            if(chapter == null)
                 return Task.FromResult(false);
-            }
 
             (chapters as List<Chapter>).Remove(chapter);
             return Task.FromResult(true);
@@ -57,9 +53,8 @@ namespace XamarinFlashCards
         {
             var chapter = chapters.FirstOrDefault(c => c.Id == id);
 
-			if (string.IsNullOrEmpty(id)) {
+			if (string.IsNullOrEmpty(id))
                 return Task.FromResult(null as Chapter);
-			}
 
             return Task.FromResult(chapter);
         }
@@ -73,9 +68,8 @@ namespace XamarinFlashCards
         {
             var chapter = chapters.FirstOrDefault(c => c.Id == item.Id);
 
-			if (item == null) {
+			if (item == null)
 				return Task.FromResult(false);
-			}
 
             if (chapter != null) {
                 (chapters as List<Chapter>).Remove(chapter);

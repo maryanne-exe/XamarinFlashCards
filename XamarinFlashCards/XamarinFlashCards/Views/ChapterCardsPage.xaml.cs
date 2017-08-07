@@ -4,15 +4,10 @@ using Xamarin.Forms;
 
 namespace XamarinFlashCards
 {
-    public enum PageScrollDirection
-    {
-        Left,
-        Right
-    }
+    public enum PageScrollDirection { Left, Right }
 
     public partial class ChapterCardsPage : CarouselPage
     {
-        // Properties
         Label CurrentResultLabel => CurrentPage.FindByName<Label>("resultLabel");
         StackLayout CurrentQuestionView => CurrentPage.FindByName<StackLayout>("questionView");
 		StackLayout CurrentResultView => CurrentPage.FindByName<StackLayout>("resultView");
@@ -20,9 +15,9 @@ namespace XamarinFlashCards
 
         public ChapterCardsPage(ChapterCardsViewModel model)
         {
-            InitializeComponent ();
-            BindingContext = model;
+            InitializeComponent();
 
+            BindingContext = model;
             ItemsSource = model.Chapter.Questions;
         }
 
@@ -63,8 +58,7 @@ namespace XamarinFlashCards
                 CurrentResultLabel.Text = "Correct!";
                 CurrentResultLabel.TextColor = Color.FromHex("#fff");
                 CurrentResultLabel.BackgroundColor = Color.FromHex("91C46C");             
-            }
-            else {
+            } else {
                 CurrentResultLabel.Text = "Wrong :(";
 				CurrentResultLabel.TextColor = Color.FromHex("#fff");
 				CurrentResultLabel.BackgroundColor = Color.FromHex("EA6045");
