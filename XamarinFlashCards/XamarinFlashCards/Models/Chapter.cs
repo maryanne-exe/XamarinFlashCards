@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Newtonsoft.Json;
 
 namespace XamarinFlashCards
@@ -6,6 +7,10 @@ namespace XamarinFlashCards
     public class Chapter : ObservableObject
     {
 		string id = string.Empty;
+        string title = string.Empty;
+        string description = string.Empty;
+
+        IEnumerable<Question> questions = new List<Question>();
 
 		[JsonIgnore]
 		public string Id
@@ -14,22 +19,20 @@ namespace XamarinFlashCards
 			set { SetProperty(ref id, value); }
 		}
 
-        string title = string.Empty;
         public string Title
 		{
 			get { return title; }
 			set { SetProperty(ref title, value); }
 		}
 
-		string description = string.Empty;
 		public string Description
 		{
 			get { return description; }
 			set { SetProperty(ref description, value); }
 		}
 
-        IEnumerable<Question> questions = new List<Question>();
-        public IEnumerable<Question> Questions {
+        public IEnumerable<Question> Questions
+        {
 			get { return questions; }
 			set { SetProperty(ref questions, value); }
         }

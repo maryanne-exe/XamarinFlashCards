@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
+using System.Linq;
+using System.IO;
+
 using Newtonsoft.Json;
 
 namespace XamarinFlashCards
@@ -38,11 +39,11 @@ namespace XamarinFlashCards
 
         public Task<bool> DeleteItemAsync(string id)
         {
+            var chapter = chapters.FirstOrDefault(c => c.Id == id);
+
             if(string.IsNullOrEmpty(id)) {
                 return Task.FromResult(false);
             }
-
-            var chapter = chapters.FirstOrDefault(c => c.Id == id);
 
             if(chapter == null) {
                 return Task.FromResult(false);
@@ -54,11 +55,11 @@ namespace XamarinFlashCards
 
         public Task<Chapter> GetItemAsync(string id)
         {
+            var chapter = chapters.FirstOrDefault(c => c.Id == id);
+
 			if (string.IsNullOrEmpty(id)) {
                 return Task.FromResult(null as Chapter);
 			}
-
-            var chapter = chapters.FirstOrDefault(c => c.Id == id);
 
             return Task.FromResult(chapter);
         }
@@ -70,11 +71,12 @@ namespace XamarinFlashCards
 
         public Task<bool> UpdateItemAsync(Chapter item)
         {
+            var chapter = chapters.FirstOrDefault(c => c.Id == item.Id);
+
 			if (item == null) {
 				return Task.FromResult(false);
 			}
 
-            var chapter = chapters.FirstOrDefault(c => c.Id == item.Id);
             if (chapter != null) {
                 (chapters as List<Chapter>).Remove(chapter);
                 (chapters as List<Chapter>).Add(item);

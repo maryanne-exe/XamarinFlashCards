@@ -39,10 +39,10 @@ namespace XamarinFlashCards
         void ScrollCarouselPage(PageScrollDirection direction)
 		{
 			var pageCount = Children.Count;
+            var index = Children.IndexOf(CurrentPage);
+
 			if (pageCount < 2)
 				return;
-
-			var index = Children.IndexOf(CurrentPage);
 
             if (direction == PageScrollDirection.Right)
                 index++;

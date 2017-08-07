@@ -1,6 +1,4 @@
-﻿using System;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XamarinFlashCards
 {
@@ -18,6 +16,7 @@ namespace XamarinFlashCards
         async void OnChapterSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var chapter = args.SelectedItem as Chapter;
+
             if (chapter == null)
                 return;
 
